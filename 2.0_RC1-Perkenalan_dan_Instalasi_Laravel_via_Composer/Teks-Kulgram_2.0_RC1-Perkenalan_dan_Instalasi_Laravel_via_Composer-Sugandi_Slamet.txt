@@ -1,0 +1,49 @@
+Apa yang akan pria ini bicarakan adalah dimana banyak sekali, mungkin hampir sering yang bertanya error-error saat melakukan instalasi Laravel ini dan itu kemungkinan banyak beberapa faktor dari a sampai z. Sekarang pria ini mungkin akan memperbaikinya. Sekali lagi, mungkin dia akan memperbaikinya!
+
+Dokumentasi: https://laravel.com/docs/5.5/installation
+Tanggal: Sabtu, 16 Desember 2017.
+Waktu Kulgram: 13:20-14:00.
+Tempat: Laravel Indonesia di Telegram.
+Oleh: Sugandi Slamet.
+
+Kulgram 2.0 RC1 – Perkenalan dan Instalasi Laravel via Composer.
+
+Sugandi Slamet: Oke sudah siap sodara2. Yang masih bingung dalam installasi Laravel? Perkenalkan. Saya Slamet Sugandi. Lulusan SMK N 3 Pekalongan. Pekerjaan Coding at Home. Hobi Renang dan Masak. Sebelumnya saya minta maaf jika ada perkataan saya yang kurang tepat atau kurang berkenan di hati pemirsa dan penonton karena baru pertama kali ini saya membawakan acara atau sebuah kulgram singkat atau dadakan dengan tema. Instalasi Laravel via Composer.
+
+Sugandi Slamet: Dimana banyak sekali mungkin hampir sering yang bertanya error-error saat melakukan installasi Laravel baru ini itu dan itu kemungkinan banyak beberapa faktor dari a sampai z. Sebelum saya mulai alangkah baiknya mempersiapkan minuman agar tidak kehausan atau sedikit cemilan atau bahkan video lucu-lucu atau action yang mungkin pembahasan kali ini bisa di bilang sangat membosankan dan tidak berbobot sama sekali. Mengingat di sini banyak sekali yang sudah mahir dalam Laravel dan mungkin lebih jago atau lebih berpengalaman dari saya maaf ya sebelumnya kalo saya menjelaskan bertele-tele dan belepotan.
+
+Ifan Fadillah: Sudah Pak Sugandi.
+
+Sugandi Slamet: Oke. Sedikit perkenalan kadang masih ada juga yang tanya Laravel itu apa si hebatnya? Apa... apa gunanya Laravel? Makanan seperti apa itu Laravel? Apa Laravel lebih baik dari framework PHP lain? Laravel sendiri pada dasarnya adalah sebuah framework PHP yang di rilis dengan lisensi MIT, dan di bangun menggunakan konsep MVC. Menurut saya sendiri Laravel itu sebuah framework PHP yang di peruntukan untuk membuat sebuah App dengan teknik seni atau art dalam pemanfaatan fitur yang dimanjakan oleh Laravel bisa juga seni dalam koding tahu sendiri kan seni pasti cantik dan indah. Hehehe. :D
+
+Nusendra Hanggarawan: PHP for Web Artisans 👌.
+
+Sugandi Slamet: Oke dalam instalasi Laravel kita membutuhkan beberapa untuk menginstalnya seperti yang sudah saya terangkan di atas tadi.
+
+Nusendra Hanggarawan: Pak Sugandi, ijin ke toilet (pulang kerja) dulu. Habis ini langsung balik.
+
+Sugandi Slamet: Oke. Seperti di atas persiapan. Yang pertama kita persiapkan versi PHP. Saya sendiri menggunakan OS Open Source yaitu Linux. Debian 9. Untuk pengecekan apa PHP kita sudah sesuai bisa dilakukan dengan mengetikan perintah pada Terminal atau Command Prompt pada Windows.
+
+Andre: Ok. Gw yang mencatat kulgram ini.
+
+Sugandi Slamet: Seperti contoh ini. [Gambar tidak tersedia.jpg].
+
+Nusendra Hanggarawan: [Reply to Andre] Arsipkan Pak Admin.
+
+Sugandi Slamet: Mengetikkan perintah php -v pada Terminal dan hasilnya seperti di atas.
+
+Nusendra Hanggarawan: Ijin pulang kerja dulu, pindah ke kantor client yg lain. Nanti lanjut.
+
+Sugandi Slamet: Untuk Windows biasanya ada kendala karena kita harus mensetting beberapa environment agar bisa menjalankan perintah seperti di atas. Untuk referensi Windows bisa di lihat di link https://www.petanikode.com/php-cmd/. Dulu sewaktu saya memakai Windows memakai tutorial seperti di atas dan untuk extensi lain yang dibutuhkan pada Windows bisa melakukan pengaktifannya pada c:/xampp/php/php.ini. Edit pada bagian php.ini dan hilangkan tanda ; untuk mengaktifkan semua extensi yang dibutuhkan untuk instalasi Laravel.
+
+Sugandi Slamet: Dan untuk instalasi Composer bisa dilihat di website official Composer https://getcomposer.org/download/. Nah setelah semua sudah lengkap seperti persyaratan yang telah saya tulis di atas tinggal mempersiapkan koneksi yang ampuh lancar gak perlu cepat asal stabil itu cukup untuk instalasi Laravel.
+
+Sugandi Slamet: Buatlah sebuah dir atau folder di sembarang tempat usahakan jangan berbarengan dengan dir system. Jika di Windows silahkan di drive D atau E. Jika di Linux bisa di home atau di dalamnya home, up to you. Hehehe. Setelah membuat dir atau folder kita buka Terminal di dalamnya bisa dengan klik kanan Open Terminal di Linux yang menggunakan File Manager Thunar seperti saya dan di Windows bisa Shift+Klik kanan lalu Open command prompt.
+
+Sugandi Slamet: Setelah itu ketikkan composer create-project laravel/laravel —prefer-dist -vvv. Imbuhan -vvv untuk mengetahui proses pada download pada instalasi Laravel ada yang failed atau tidak. Dan pada saat proses akan seperti ini: [Gambar tidak tersedia.jpg]. Sambil menunggu proses selesai karena dadakan tanpa naskah proklamasi silahkan minum-minum dulu atau nyemil yang punya makanan atau pipis yang kebelet.
+
+Sugandi Slamet: Maaf sedikit konfirmasi karena pada pengetikan perintah saya ceroboh dan tidak mendefinisikan folder create maka pada saat instalasi akan membuat folder dengan nama default yaitu laravel. *Setelah beberapa menit kemudian*. Maaf lama karena koneksi saya pakai koneksi minim jadi lama. Oke setelah selesai akan ada folder dengan nama laravel. [Gambar tidak tersedia.jpg]. Setelah selesai kita masuk ke folder laravel dengan perintah: cd laravel pada Terminal yang tadi selesai instalasi Laravel atau bisa masuk ke folder laravel lalu buka Terminal lagi dari situ. Setelah itu kita ketikan perintah: php artisan serve dan akan menghasilkan output pada terminal seperti: [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Nah setelah itu kita buka browser dan mengetikan alamat localhost:8000 atau 127.0.0.1:8000 dan hasilnya seperti: [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Oke cukup panjang bertele-telenya sampai di sini proses instalasi Laravel selesai dan sampai di sini juga akhir dari Kuis dadakan, eh salah, Kulgram dadakan yang mungkin membosankan bagi para pemirsa. Selebihnya saya minta maaf jika ada tutur kata, eh, tutur tulisan saya yang kurang berkenan di hati pemirsa. Wasalamualaikum...
