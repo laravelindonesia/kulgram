@@ -47,6 +47,8 @@ Oleh: Nusendra Hanggarawan<br>
 
 [README](https://cdn.rawgit.com/nusendra/kulgram/a321793f/berkas/1.1-Penjelasan_tambahan_route_manual_cors_middleware_lumen_v5.5/README.md)
 
+![](./gambar/pemisah.png)
+
 ### Kulgram 1.0 – Build REST API using Lumen v5.4
 
 Tingkat: Pemula<br>
