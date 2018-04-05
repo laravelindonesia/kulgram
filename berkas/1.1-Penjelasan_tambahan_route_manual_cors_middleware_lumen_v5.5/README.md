@@ -15,7 +15,7 @@
 6. Penjelasan API Versioning
 7. Manual CORS Middleware 
 
-![](./gambar/pemisah.png)
+<hr>
 
 Assalamualaikum warahmatullahi wabarakatuh
 
@@ -37,14 +37,14 @@ Sebelum menentukan framework PHP yang akan kita pakai, kita sebaiknya tentukan d
 Nah kenapa harus lumen? Kenapa bukan yang lain misalnya Silex / Slim / Phalcon ?? Sah sah saja kalau mau pakai selain lumen, tapi berdasarkan benchmark, Lumen lebih mantap daripada Slim. (Benchmark ya, bukan vote). Ya paling tidak Lumen vs Slim 11 - 12 lah. Hampir sama
 #CMIIW
 
-![](./gambar/compare-lumen.jpg)
+![](./compare-lumen.jpg)
 
 https://www.gajotres.net/best-available-php-restful-micro-frameworks/
 
 Karena disini yang di rekomendasikan adalah Slim, Lumen, Silex, Phalcon. Maka benchmark nya dibawah ini
 https://symfony.fi/entry/symfony-benchmarks-microkernel-silex-lumen-and-slim
 
-![](./gambar/compare-lumen2.jpg)
+![](./compare-lumen2.jpg)
 
 OK, insyaallah kita ga salah pilih kalo pake lumen 😊
 
@@ -59,96 +59,89 @@ pada lumen fresh install, dia bener bener ringan. tapi jika kita pengen pake kek
 Nah, caranya kita tinggal uncomment baris kode yang ada di bootstrap/app.php
 
 Uncomment
-$app->withFacades();
-untuk mengaktifkan fitur facade (sangat disarankan)
+`$app->withFacades();`
+<br>untuk mengaktifkan fitur facade (sangat disarankan)
 
 Uncomment
-$app->withEloquent();
-untuk mengaktifkan fitur eloquent (Optional)
+`$app->withEloquent();`
+<br>untuk mengaktifkan fitur eloquent (Optional)
 
 Uncomment
+```
 $app->routeMiddleware([
     'auth' => App\Http\Middleware\Authenticate::class,
 ]);
-untuk mengaktifkan middleware di route (untuk auth)
+```
+<br>untuk mengaktifkan middleware di route (untuk auth)
 
 uncomment 2 baris ini
+```
 $app->register(App\Providers\AppServiceProvider::class);
-
 $app->register(App\Providers\AuthServiceProvider::class);
-
+```
 Config done .....
 
 ### Composer : Laravel vs Lumen
 
 Ketika temen - temen mengetik
-php artisan
-di terminal, pada laravel akan muncul banyak opsi, sebaliknya di lumen kalian hanya akan menemukan sedikit. karena lumen ini lebih banyak menggunakan teknik manual daripada otomatisasi seperti di laravel. Jika di laravel kita bisa bikin model dan controller lewat artisan, di lumen kita ga bisa melakukan hal tersebut. So, di lumen kita harus create file nya secara manual.
+`php artisan`
+<br>di terminal, pada laravel akan muncul banyak opsi, sebaliknya di lumen kalian hanya akan menemukan sedikit. karena lumen ini lebih banyak menggunakan teknik manual daripada otomatisasi seperti di laravel. Jika di laravel kita bisa bikin model dan controller lewat artisan, di lumen kita ga bisa melakukan hal tersebut. So, di lumen kita harus create file nya secara manual.
 
 ### Penjelasan Route di Lumen
 
 di Laravel, kita bisa mengetikkan route seperti ini
-Route::get('post','PostController@index');
-atau dengan resource
-Route::resource('post','PostController');
+`Route::get('post','PostController@index');`
+<br>atau dengan resource
+`Route::resource('post','PostController');`
 
 tapi di Lumen 5.5 berbeda, seperti dibawah ini
-$router->get('post','PostController@index');
+`$router->get('post','PostController@index');`
 
 dan satu lagi, di lumen kita ga bisa pakai fitur resource..
 
 ### API Versioning di Lumen
 
-Nusendra, [31.12.17 19:42]
 Saya dulu gak paham dengan api versioning ini, sampe tanya mas @mai92 juga masih belum solved. Kebingungan ini merasuk ke dalam jiwa #lol ketika mencari perbedaan antara URI localhost/api/v1/post dengan localhost/post. Karena keduanya sama aja di response nya, gak ada perbedaan sama sekali. Lantas apa gunanya api version? akhirnya googling sendiri dan nemu artikel ini 
 https://dzone.com/articles/rest-api-versioning-is-there-a-right-answer
 
-Nusendra, [31.12.17 19:46]
 Jadi ada 2 kondisi :
-
 - Jika api yang dibangun hanya untuk kebutuhan internal, maka kita tidak perlu api versioning
-
 - Jika api kita merupakan public API yang mana kita gak bisa mengontroll di sisi client, maka kita perlu melakukan api versioning. jadi misalkan di api v1 kita memberi response dengan struktur json tertentu, kemudian di sisi backend kita ada perubahan struktur json, maka kita harus bikin api v2 dan menginformasikan ke client bahwa kita update api ke versi 2. Sehingga client bisa menyesuaikan app nya dengan struktur response json yang baru milik kita.
 
 Sampai sini pengenalan awal nya sudah beres. Insyaallah paham lah ya. Dasar banget ini soalnya. Gak jauh beda sama Laravel. Bedanya kita lebih banyak bermain di manual
 
 Sebelum menginjak ke point akhir, silakan kalau temen - temen ada yang mau nambahin / bertanya
 
-Lock On Stratos, [31.12.17 19:49]
-[In reply to Nusendra]
-jadi kalo buat public API v1,v2. termasuknya wajib ya bang ?
+<blockquote>Lock On Stratos, [31.12.17 19:49]
+jadi kalo buat public API v1,v2. termasuknya wajib ya bang ?</blockquote>
 
-[In reply to Lock On Stratos]
 iya. Jika kita merasa kedepannya bakal ada perubahan struktur json untuk response kita, maka perlu dibuat api version. Tapi kalau misalnya response kita tidak ingin ada perubahan, dan selama nya tetap seperti itu struktur nya, maka tanpa dibuat versi juga tidak masalah
 
 dan jika api kita hanya untuk kebutuhan internal, tanpa versioning API juga ga masalah. Karena di sisi client / frontend kita sendiri yang pegang. Jika ada perubahan json, langsung kita ubah disisi frontend nya
 
-Noor Adiana, [31.12.17 19:51]
-Secara default component laravel apa aja yang dibawa oleh lumen?
+<blockquote>Noor Adiana, [31.12.17 19:51]
+Secara default component laravel apa aja yang dibawa oleh lumen?</blockquote>
 
-![](./gambar/lumen-vendor.jpg)
+![](./lumen-vendor.jpg)
 
-Lock On Stratos, [31.12.17 19:53]
-[In reply to Nusendra]
-Kalo udah di update jadi v2.. untuk yang v1 nya tetep bisa di gunakan ya bang ?
+<blockquote>Lock On Stratos, [31.12.17 19:53]
+Kalo udah di update jadi v2.. untuk yang v1 nya tetep bisa di gunakan ya bang ?</blockquote>
 
-Nusendra, [31.12.17 19:56]
-[In reply to Lock On Stratos]
 ini tergantung. jika kita pengen mempertahankan v1 ya boleh saja. Tinggal kita atur di route dan controller nya. Jika pengen menutup v1 juga boleh. Jadi nanti client dipaksa untuk pakai v2.
 
 ### CORS Middleware (Optional)
 
 Kalau kita pake frontend vuejs, kita perlu setting CORS di lumen agar request dari HTTP client seperti axios / vue-resource / superagent bisa diterima oleh lumen. Jika kita belum setting CORS di lumen, nanti ketika ada request dari client (vuejs) akan muncul error seperti dibawah ini.
 
-![](./gambar/cors-error.jpg)
+![](./cors-error.jpg)
 
 Untuk setting CORS di middleware ada banyak cara. bisa pakai package yang bertebaran di github. Tapi saya lebih seneng bikin sendiri.
 
 Pertama kita bikin CORS Middleware nya dulu. Buat CorsMiddleware.php didalam
-app/Http/Middleware
+`app/Http/Middleware</code>`
 
 Trus copas ini
-
+```
 <?php
 
 namespace App\Http\Middleware;
@@ -172,14 +165,18 @@ class CorsMiddleware
     return $response;
   }
 }
+</code>
+<br>
+Trus di `bootstrap/app.php</code> edit settingan / uncomment dan tambahkan middleware nya jadi begini
 
-Trus di bootstrap/app.php edit settingan / uncomment dan tambahkan middleware nya jadi begini
-
+`
 $app->middleware([
    App\Http\Middleware\CorsMiddleware::class
 ]);
+```
+<br>
 
-![](./gambar/cors-sukses.jpg)
+![](./cors-sukses.jpg)
 
 Login setelah CORS middleware setelah selesai di setting di backend. api key akan di store ke localstorage dan vuex. Next insyaallah bahas otentikasi ini 😊
 
