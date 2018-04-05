@@ -165,16 +165,15 @@ class CorsMiddleware
     return $response;
   }
 }
-</code>
-<br>
+
+```
 Trus di `bootstrap/app.php</code> edit settingan / uncomment dan tambahkan middleware nya jadi begini
 
-`
+```
 $app->middleware([
    App\Http\Middleware\CorsMiddleware::class
 ]);
 ```
-<br>
 
 ![](./cors-sukses.jpg)
 
