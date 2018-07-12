@@ -1,0 +1,117 @@
+Ini adalah lanjutan dari Kulgram "Penjelasan dan Instalasi Laravel via Composer". Jika Anda belum membacanya, silakan ke https://t.me/laravelindonesiaarchive/6. Dan kali ini Sugandi akan sharing tentang membuat Auth di Laravel dan Migration Seeder menggunakan Faker. Love beautiful Auth and Fake data when develop? We do too.
+
+Dokumentasi:
+    https://laravel.com/docs/5.5/authentication
+    https://laravel.com/docs/5.5/seeding
+Tanggal: Senin, 18 Desember 2017 s/d Selasa, 19 Desember 2017.
+Waktu Kulgram: 22:13-00:01 WIB.
+Tempat: Laravel Indonesia di Telegram.
+Oleh: Sugandi Slamet.
+
+Kulgram 2.0 – Auth Laravel dan Migration-Seeder.
+
+Sugandi Slamet: #KULGRAM PART 2. Auth Laravel dan Migration-Seeder.
+
+Undefined Zen: 😱😍.
+
+Andy Triyanto: Yang baru mau belajar Laravel bisa ngikutin dari mana nih?
+
+Sugandi Slamet: Oke. Sebelum dimulai kulgram dadakan tanpa jam, tanpa tanggal, tanpa arahan, dan menyesatkan ini sebelumnya teman-teman yang belum mengikuti kulgram kemarin silakan bisa membaca di archive yang sudah dirangkum sama admin kita @mutator. Silakan bisa membuka melihat-lihat kulgram kemarin tentang instalasi Laravel via composer di https://t.me/laravelindonesiaarchive.
+
+Sugandi Slamet: Ingat loh ini menurut saya jadi jika beranggapan lain dari pendapat saya, ya diperbolehkan, saya tidak melarang atau menggugat. Oke. Mari kita mulai kulgram, sebelum dimulai mari kita baca doa menurut agama dan keyakinan masing-masing. Bagi yang muslim mari kita baca basmalah bersama-sama. "Bismillahirrahmanirrahim".
+
+Sugandi Slamet: Oke. Langsung saja. Melanjutkan yang kemarin kita sudah instalasi Laravel, mari kita buka project yang kemarin bukalah dengan Terminal pada project Laravel yang sudah kita instal kemarin dengan cara klik kanan Open terminal bagi Linux dan pengguna File Manager Thunar dan untuk Windows bisa tahan Shift+Klik kanan Open command prompt.
+
+Sugandi Slamet: Setelah itu mari kita buat sebuah Auth bawaan dari Laravel yang sudah sangat dimanjakan oleh Laravel dan kita tinggal pakai atau bisa dimodifikasi sesuai keinginan. Ketikkan perintah 'php artisan make:auth' pada terminal. Bahasa manusianya seperti ini, "Pak Laravel Artisan, tolong dong buatkan Auth untuk saya.".
+
+Sugandi Slamet: Dan penampilannya akan seperti ini. [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Itu menandakan Laravel sudah membuatkan Auth dengan adanya kata-kata 'successfully'. Mari kita tengok struktur direktori dan file apa saja yang sudah di generated oleh Laravel itu. Bukalah editor kesayangan Anda, bisa pakai Notepad++, Sublime Text, Atom, PHPStorm, VSCode, dll yang biasa Anda pakai dan mungkin sebagai andalan kalian karena seorang programer punya selera masing-masing dalam editor. Nah penampakan direktori dan file-file yang sudah di generated sebagai berikut. [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Beberapa file tersebut letaknya pada: app/Http/Controllers/Auth, resources/views/auth/, resources/views/layouts/, resources/views/home.blade.php. Itulah beberapa file yang di generate oleh Auth Laravel. Mari kita menuju LoginController penampakannya seperti ini. [Gambar tidak tersedia.jpg]. Hiraukan notifikasi group sebelah. Maaf. Hehe. :D
+
+Sugandi Slamet: Nah, saya akan jelaskan sedikit saja disini LoginController menggunakan trait dari AuthenticatesUsers. Untuk memodifikasi bisa melakukan override method-method yang ada di dalamnya. Di situ ada protected $redirectTo = '/home'; yang artinya setelah melakukan login akan redirect ke url dengan nama home. Di dalam protected redirectto bisa dimodifikasi sesuka teman-teman.
+
+David: Busyet... Kok bisa masuk tipi saya.
+
+Sugandi Slamet: Dan disitu juga ada __cunstruct(). Tahu sendiri kan fungsi method __constuct(). Saya jelaskan sedikit yang saya tahu method __construct() akan menjalankan apa saja yang ada di dalamnya pertama kali class tersebut dipanggil. Seperti itu singkatannya saja. Jika kurang dipahami bisa baca-baca di dokumentasi PHP: http://php.net/manual/en/language.oop5.decon.php.
+
+Sugandi Slamet: Oke. Di dalam __construct() itu menjalankan midleware('guest')->except('logout'). Saya terjemahkan dalam Bahasa Indonesia LoginController saat dipanggil awal akan menjalankan middleware guest kecuali logout. Jadi para tamu atau guest bisa mengakses LoginController.
+
+Herwin: Logout itu apa pak?
+
+Sugandi Slamet: Untuk pertanyaan nanti mas setelah selesai sebentar kok ini.
+
+Herwin: Siap siap , maap pak 🙈.
+
+Sugandi Slamet: Untuk controller lainnya hampir mirip. Jadi tinggal dilihat-lihat sendiri kalo dibahas semua akan panjang lebar mungkin sampai 3 hari 3 malam tidak kelar. Nanti bisa ditanyakan di bawah. Oke untuk mempersingkat waktu mari kita coba Auth nya. Pertama-tama kita akan menjalankan Laravel melalui artisan serve jadi kita tidak perlu menaruh project kita ke dalam /xampp/htdocs untuk Windows atau /var/www/html untuk Linux dan kawan-kawan mari kita ketikan perintah php artisan serve pada Terminal yang tadi telah kita buka. Penampakannya akan seperti ini. [Gambar tidak tersedia.jpg]. Sekarang kita buka browser dan ketik sesuai output php artisan serve atau bisa localhost:8000.
+
+Sugandi Slamet: Oke. Di situ ada keanehan sedikit dari output kemarin tanpa Auth. Coba tebak apa? Yap betul. Ada menu login dan register. Pada menu login akan tampil seperti ini. [Gambar tidak tersedia.jpg] dan pada menu register akan seperti ini. [Gambar tidak tersedia.jpg]. Cantik buka Laravel sudah menyediakan Auth yang lumayan cantik.
+
+Sugandi Slamet: Oke. Mari kita lanjut ke pengaturan database. Pengaturan Laravel sangat enak kita bisa melakukan konfigurasi database, mail, dll pada file .env. Tentu ada beberapa kekurangan juga dari php artisan serve karena setelah kita melakukan perubahan pada .env kita harus selalu me-restart php artisan serve.
+
+Sugandi Slamet: Oke. Mari kita lanjut. Buat dulu sebuah database dengan nama kulgram_auth. Setelah itu kita atur pada file .env sebagai berikut. [Gambar tidak tersedia.jpg].
+
+Hendry: Seruh nih live.
+
+Sugandi Slamet: Pada
+    DB_DATABASE=namadatabase
+    DB_USERNAME=username
+    DB_PASSWORD=password
+Isikan sesuai dengan database masing-masing ya kawan.
+
+Andre: Dang. VIM user.
+
+Sugandi Slamet: Oke. Selanjutnya kita restart php artisan serve. Lalu kita coba register user sebelum login. Oke oops terjadi salah. Error tersebut akan seperti ini. [Gambar tidak tersedia.jpg]. Nah kok errror mas? Ya bener emang error sengaja kita errorkan. Sesuai dengan judul Auth dan Migration-Seeder. Nah error di atas menandakan bahwa pada database kulgram_auth tidak terdapat sebuah tabel dengan nama users.
+
+Hendry: Tanpa error bisa dibenahi.
+
+Sugandi Slamet: Dengan error "SQLSTATE[42S02]: Base table or view not found: 1146 Table 'kulgram_auth.users' doesn't exist". Nah sekarang kita kembali ke Terminal. Satu hal lagi kita harus lakukan agar error itu hilang, yaitu: 1. Buat table users secara manual. 2. Buat table users dengan migrations. Karena judulnya ada migrations nya jadi kita pakai migration. Mari kita kembali ke Terminal dan ketikkan: php artisan migrate. Penampakan akan seperti di bawah ini. [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Nah kok error lagi. Kenapa? Banyak sekali pertanyaan-pertayaan yang error seperti ini dari penguna Laravel baru di situ terdapat output "071 Specified key was too long; max key length is 767 bytes".
+
+Hendry: Karena jumlah karakter.
+
+Sugandi Slamet: Nah, tepat sekali Mas Hendra. 100 buat Mas Hendra.
+
+Hendry: Hendry om...
+
+Sugandi Slamet: Untuk melakukan fix pada error ada beberapa cara.
+
+Hendry: 1 cara. Drop database.
+
+Sugandi Slamet: Dan saya akan mengunakan cara yang familiar terdapat di dokumentasi.
+
+Hendry: Lalu benahi app provider.
+
+Sugandi Slamet: Mari kita pergi ke app/Providers/AppServiceProvider.php. Penampakan akan seperti ini. [Gambar tidak tersedia.jpg]. Mari kita tambahkan agar migration tadi tidak error dan kita tambahkan pada method boot(), yaitu "Schema::defaultStringLength(191);". Tak lupa juga kita tambahkan paling atas sendiri facadesnya. "use Illuminate\Support\Facades\Schema;".
+
+Sugandi Slamet: Oke. Mari kita kembali ke Terminal dan refresh pada database dengan ketikan perintah php artisan migrate:refresh.
+
+Hendry: 👍👍 Keren. I like it.
+
+@omdjin: Mantab.
+
+Sugandi Slamet: Oke. Mari kita coba lagi register. Maka error yang tadi akan menghilang dari dunia perlaravelan.
+
+Hendry: Aminnn.
+
+Sugandi Slamet: Setelah berhasil register maka kita akan langsung login dan redirect ke halaman home. Maka tampil seperti di bawah ini. [Gambar tidak tersedia.jpg]. Karena sudah selesai sampai register login dan benah-benah error. Mari kita ke tahap pembuatan migration untuk bekal kelanjutan nanti.
+
+Sugandi Slamet: Mari kita buat sebuah migration dengan nama kontaks. Agar lebih mudah saya buat dengan bahasa yang gampang. Mari kita ke Terminal dan ketikkan perintah ini: php artisan make:migration create_kontaks_table. Perintah itu akan menjelaskan seperti ini "Laravel Artisan, tolong dong buatkan migration dengan nama create_kontaks_table". Di situ Laravel akan men-generated migration dengan nama create_kontaks_table_timestamp. Mari kita tengok dan isikan migration. Pada file migration tadi kita isikan seperti ini. [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Setelah itu kita jalankan migrate kembali dengan mengetikkan perintah: php artisan migrate. Sekarang kita bisa buka phpmyadmin atu mysql masing-masing. Saya sendiri menggunakan phpmyadmin serta adminer untuk lebih familiar saya buka phpmyadmin. Untuk me-rollback nya bisa dengan perintah: php artisan migrate:rollback dan table terakhir yang ter-migrate akan kembali.
+
+Sugandi Slamet: Nah, sekarang kita ke puncaknya. Yaitu mengisi data tabel kontaks dengan dummy data menggunakan Seeder dan Faker. Mari kita buat seeder ketikan perintah: php artisan make:seeder KontaksSeeder. Nah di situ perintah berbunyi "Laravel Artisan, tolong dong buatkan seeder dengan nama KontaksSeeder. Tolong ya biar cepat." Hehehe. :)
+
+Sugandi Slamet: Nah, Laravel akan men-generated file seeder dengan nama file KontaksSeeder dan mari kita buka serta kita isikan agar bisa membuat dumy data. Mari kita gunakan Faker untuk membuat dummy. Faker sendiri apa? Faker sendiri adalah PHP library yang disediakan untuk membuat data palsu ketika kita sedang develop. Untuk referensinya bisa melihat di sini: https://github.com/fzaninotto/Faker. Oke, sekarang kita ubah dan edit isi KontaksSeeder seperti ini: [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Mari kita jalankan seeder agar tidak penasaran dan bertanya-tanya. Kode apa si itu jelek banget gak mutu. Mari kita ketikkan perintah di Terminal: php artisan db:seed dan hasilnya akan seperti ini. [Gambar tidak tersedia.jpg]. Wah kok gak ada outputnya mas? Kenapa? banyak teman-teman kadang bertanya sudah membuat seeder tapi kok setelah dijalankan tidak terjadi apa-apa itu karena kita belum memanggil kelas seeder pada DatabaseSeeder.php. Mari kita tambahkan sesuatu pada file DatabaseSeeder.php. [Gambar tidak tersedia.jpg]. Tambahkan beberapa baris itu lalu jalankan seeder kembali. Nah, lalu output kan muncul seperti ini: [Gambar tidak tersedia.jpg].
+
+Sugandi Slamet: Nah, sudah deh sampai ujung acara. Nah mas, om, kok cuma output gitu aja. Oh tidak! Tenang. Kita bisa cek pada database. Bisa buka phpmyadmin dan akan terbentuk data sebanyak 20 data secara random. Penampakan seperti ini: [Gambar tidak tersedia.jpg]. Nah, berhasil sudah sampai seeder.
+
+Sugandi Slamet: Berhubung pembahasan sudah sampai seeder sesuai judul maka saya akhiri kulgram ini dan mari kita ucapkan hamdalah. "Alhamdulillah".
+
+Fikri Zufri: Alhamdulillah. Terimakasih banyak.
+
+Sugandi Slamet: Apabila ada tutur kalimat saya yang kurang berkenan di hati kawan-kawan, bapak-bapak, ibu-ibu, om-om, tante-tante, dan semua sahabat Laravel. Saya ucapkan mohon maaf yang sebesar besarnya dan terimakasih sudah menengok kulgram yang tidak ada bobotnya ini. Wassalamu’alaikum warahmatullahi wabarakatuh.
