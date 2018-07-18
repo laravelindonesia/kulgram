@@ -72,4 +72,4 @@ Oleh: Akhmad Romadlon Zainur Rofiq<br>
 
 ![Lisensi Creative Commons](https://licensebuttons.net/l/by/4.0/88x31.png)
 
-Karya ini dilisensikan di bawah lisensi [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
+Karya ini dilisensikan di bawah [Lisensi Atribusi 4.0 Internasional Creative Commons](https://creativecommons.org/licenses/by/4.0/deed.id).
