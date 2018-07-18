@@ -17,6 +17,16 @@ Semua kulgram bisa dilihat juga di kanal [@laravelindonesiaarchive](https://t.me
 
 ![](./gambar/pemisah.png)
 
+### Kulgram 3.0 – Konsumsi Laravel Api dengan Nuxtjs (Vuejs)
+
+Tingkat: Pemula - Menengah<br>
+Tanggal: 17 Juli 2018<br>
+Oleh: Nusendra Hanggarawan<br>
+
+[README](https://github.com/laravelindonesia/kulgram/blob/master/berkas/3.0-Consume_laravel_api_with_nuxtjs/README.md)
+
+![](./gambar/pemisah.png)
+
 ### Kulgram 2.0 – Auth Laravel dan Migration-Seeder
 
 Tingkat: Pemula<br>
