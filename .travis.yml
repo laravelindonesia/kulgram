@@ -4,4 +4,4 @@ rvm:
 before_script:
   - gem install awesome_bot
 script:
-  - find . -type f -name "*.md" -exec awesome_bot {} --white-list localhost \;
+  - find . -type f -name "*.md" -exec awesome_bot {} --allow-dupe --white-list localhost \;
