@@ -1,8 +1,8 @@
 <h1 align="center"><a href="https://github.com/laravelindonesia/kulgram"><img src="./gambar/kulgram.png"></a><br>Kulgram Laravel Indonesia</h1>
 
 <p align="center">
-    <a href="https://travis-ci.org/laravelindonesia/kulgram"><img src="https://api.travis-ci.org/laravelindonesia/kulgram.svg" alt="Status Build"></a>
-    <a href="https://telegram.me/laravelindonesia"><img src="https://img.shields.io/:chat-di_telegram-2DA5E1.svg" alt="Telegram"></a>
+    <a href="https://travis-ci.com/laravelindonesia/kulgram"><img src="https://img.shields.io/travis/com/laravelindonesia/kulgram/master.svg" alt="Status Build"></a>
+    <a href="https://telegram.me/laravelindonesia"><img src="https://img.shields.io/badge/chat-di_telegram-2DA5E1.svg" alt="Telegram"></a>
     <a href="https://id.wikipedia.org/wiki/Indonesia"><img src="https://img.shields.io/badge/negara-indonesia-blue.svg" alt="Negara"></a>
 </p>
 
