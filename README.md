@@ -33,7 +33,7 @@ Tingkat: Pemula<br>
 Tanggal: 18 Desember 2017<br>
 Oleh: Sugandi Slamet<br>
 
-[PDF](https://rawgit.com/laravelindonesia/kulgram/master/berkas/2.0-Auth_Laravel_dan_Migration_Seeder/Kulgram_2.0-Auth_Laravel_dan_Migration_Seeder-Sugandi_Slamet.pdf) · 
+[PDF](https://raw.githack.com/laravelindonesia/kulgram/master/berkas/2.0-Auth_Laravel_dan_Migration_Seeder/Kulgram_2.0-Auth_Laravel_dan_Migration_Seeder-Sugandi_Slamet.pdf) · 
 [TXT](https://raw.githubusercontent.com/laravelindonesia/kulgram/master/berkas/2.0-Auth_Laravel_dan_Migration_Seeder/Teks-Kulgram_2.0-Auth_Laravel_dan_Migration_Seeder-Sugandi_Slamet.txt)
 
 ![](./gambar/pemisah.png)
@@ -44,7 +44,7 @@ Tingkat: Pemula<br>
 Tanggal: 16 Desember 2017<br>
 Oleh: Sugandi Slamet<br>
 
-[PDF](https://rawgit.com/laravelindonesia/kulgram/master/berkas/2.0_RC1-Perkenalan_dan_Instalasi_Laravel_via_Composer/Kulgram_2.0_RC1-Perkenalan_dan_Instalasi_Laravel_via_Composer-Sugandi_Slamet.pdf) · 
+[PDF](https://raw.githack.com/laravelindonesia/kulgram/master/berkas/2.0_RC1-Perkenalan_dan_Instalasi_Laravel_via_Composer/Kulgram_2.0_RC1-Perkenalan_dan_Instalasi_Laravel_via_Composer-Sugandi_Slamet.pdf) · 
 [TXT](https://raw.githubusercontent.com/laravelindonesia/kulgram/master/berkas/2.0_RC1-Perkenalan_dan_Instalasi_Laravel_via_Composer/Teks-Kulgram_2.0_RC1-Perkenalan_dan_Instalasi_Laravel_via_Composer-Sugandi_Slamet.txt)
 
 ![](./gambar/pemisah.png)
@@ -65,7 +65,7 @@ Tingkat: Pemula<br>
 Tanggal: 7 Mei 2017<br>
 Oleh: Akhmad Romadlon Zainur Rofiq<br>
 
-[PDF](https://rawgit.com/laravelindonesia/kulgram/master/berkas/1.0-Build_REST_API_using_Lumen_v5.4/Kulgram_1.0-Build_REST_API_using_Lumen_v5.4-Akhmad_Zainur.pdf)
+[PDF](https://raw.githack.com/laravelindonesia/kulgram/master/berkas/1.0-Build_REST_API_using_Lumen_v5.4/Kulgram_1.0-Build_REST_API_using_Lumen_v5.4-Akhmad_Zainur.pdf)
 
 
 ## Lisensi
