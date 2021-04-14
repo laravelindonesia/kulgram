@@ -1,7 +1,7 @@
-dist: bionic
+dist: focal
 language: ruby
 rvm:
-  - 2.6
+  - 3.0
 before_script:
   - gem install awesome_bot
 script:
