@@ -146,7 +146,7 @@ Oh iya, saya akan jelaskan terlebih dahulu alur kerja Auth nya.
 
 Bagi yang belum tau apa kegunaan CORS, silakan gugling dulu. Singkatnya CORS ini diperlukan jika project kita berbeda repo/folder antara Back-End dan Front-End. Misalkan kita bikin web app dengan Laravel sebagai Back-End nya dan Vue.js sebagai Front-End nya. Maka kita perlu install CORS di Laravel, agar request dari Front-End dapat diterima oleh Back-End.
 
-Silakan mampir kesini untuk petunjuk instalasinya: https://github.com/barryvdh/laravel-cors
+Silakan mampir kesini untuk petunjuk instalasinya: https://github.com/fruitcake/laravel-cors
 
 ### Instalasi Nuxt.js sebagai Front-End
 

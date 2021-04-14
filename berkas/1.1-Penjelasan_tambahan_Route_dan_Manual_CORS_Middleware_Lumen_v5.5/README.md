@@ -38,7 +38,7 @@ Nah kenapa harus Lumen? Kenapa bukan yang lain misalnya Silex/Slim/Phalcon? Sah 
 
 ![](./compare-lumen.jpg)
 
-<sub>https://www.gajotres.net/best-available-php-restful-micro-frameworks/<sub>
+<sub>https://web.archive.org/web/20180222104909/https://www.gajotres.net/best-available-php-restful-micro-frameworks/ <br> https://web.archive.org/web/20180222101819/https://www.gajotres.net/best-available-php-restful-micro-frameworks/2/<sub>
 
 Karena disini yang di rekomendasikan adalah Slim, Lumen, Silex, Phalcon.<br>
 Silakan baca benchmark nya: https://symfony.fi/entry/symfony-benchmarks-microkernel-silex-lumen-and-slim
