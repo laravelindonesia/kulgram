@@ -1,8 +1,0 @@
-dist: focal
-language: ruby
-rvm:
-  - 3.0
-before_script:
-  - gem install awesome_bot
-script:
-  - find . -type f -name "*.md" -exec awesome_bot {} --allow-dupe --white-list localhost \;

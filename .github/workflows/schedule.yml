@@ -1,0 +1,23 @@
+name: Terjadwal
+
+on:
+  schedule:
+    # On the 1st day of the month
+    - cron: '0 0 1 * *'
+
+jobs:
+  testing:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Menyiapkan Ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 3.1
+      - name: Memasang paket
+        run: gem install awesome_bot
+      - name: Memeriksa tautan-tautan
+        run: find . -type f -name "*.md" -exec awesome_bot {} --allow-dupe --white-list localhost \;
