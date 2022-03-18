@@ -150,7 +150,7 @@ Silakan mampir kesini untuk petunjuk instalasinya: https://github.com/fruitcake/
 
 ### Instalasi Nuxt.js sebagai Front-End
 
-Dokumentasi lengkap bisa mampir kesini: https://nuxtjs.org/guide/installation
+Dokumentasi lengkap bisa mampir kesini: https://nuxtjs.org/docs/get-started/installation/
 
 Oh iya, harus install Node.js dan npm dulu ya. Caranya silakan gugling dulu.
 
